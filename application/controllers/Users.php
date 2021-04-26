@@ -80,6 +80,9 @@ class Users extends CI_Controller {
 
     // end for number 2
 
+
+
+
     // for number 3
     public function users_json(){
         $data['users'] = $this->user->get_all_users();
@@ -89,7 +92,7 @@ class Users extends CI_Controller {
             "country" => $this->input->post("country"),
         );
         $data['count'] = $this->user->get_all_users_count($search_detail);
-        
+
         echo json_encode($data);
     } 
     public function index(){
@@ -123,7 +126,7 @@ class Users extends CI_Controller {
         $data['users'] = $this->user->get_all_users_with_filter($search_detail);
         echo json_encode($data);
     }
-
+    // end of number 3
 
 
 
