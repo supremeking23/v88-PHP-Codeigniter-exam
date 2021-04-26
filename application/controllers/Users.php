@@ -63,12 +63,9 @@ class Users extends CI_Controller {
         $data['count'] = $this->user->get_all_users_count($search_detail);
         $this->load->view('users/problem2',$data);
         $this->session->sess_destroy();
-        // $this->session->set_userdata("retrieve_row",$row);
 	}
 
     public function search_filter_process(){
-        // echo $this->input->post("gender",TRUE);
-        // var_dump($this->input->post("gender"));
         $gender = $this->input->post("gender");
         $country = $this->input->post("country");
 
@@ -78,9 +75,6 @@ class Users extends CI_Controller {
 		);
 
 		$this->session->set_userdata($search_detail);
-        // var_dump($this->input->post("country"));
-        // echo "helo";
-
         redirect(base_url());
     }
 

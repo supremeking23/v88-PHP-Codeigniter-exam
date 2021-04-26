@@ -15,6 +15,8 @@ class User extends CI_Model {
     //     return $this->db->query($query)->result_array();
     // }
 
+
+    //use in number 2
     function get_all_users_with_filter($filter){
         $query = "SELECT concat(first_name,' ',last_name) as full_name,age,gender,country FROM users ";
 
@@ -95,6 +97,10 @@ class User extends CI_Model {
         return $this->db->query("SELECT country FROM users")->result_array();
     }
 
+    // end number 2
+
+
+    // use in problem number 1
     function get_all_users_with_limit($row){
         $query = "SELECT concat(first_name,' ',last_name) as full_name,age,gender,country FROM users LIMIT ? ";
         $values = array((int)$row["row"]);
